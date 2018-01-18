@@ -3,7 +3,6 @@ node_js: node
 cache:
   directories:
     - node_modules
-services: postgresql
 before_script:
   - sudo apt-get -qq update # qq for less output
 install:
