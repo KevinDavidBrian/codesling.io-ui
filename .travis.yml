@@ -6,10 +6,6 @@ cache:
 services: postgresql
 before_script:
   - sudo apt-get -qq update # qq for less output
-<<<<<<< HEAD
-=======
-  # - psql -c 'create database travis_ci_test;' -U root
->>>>>>> [travis] - recraete error on travis file
 install:
   - yarn
   - yarn buildEnv
