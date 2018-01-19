@@ -17,84 +17,23 @@ script:
   - zip -r latest *
   - mkdir -p dpl_cd_upload_ui
   - mv latest.zip dpl_cd_upload_ui/latest.zip
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
->>>>>>> [travis] testing: deploy to s3
 deploy:
-<<<<<<< HEAD
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     skip_cleanup: true # prevents resetting and deleting all changes
-<<<<<<< HEAD
         on: &2
       repo: KevinDavidBrian/codesling.io-ui
     bucket: 'kdb-legacy-ui'
     # region: us-west-1
-=======
-    on: &2
-      repo: KevinDavidBrian/codesling.io-api
-    bucket: kdb-legacy-api
->>>>>>> [travis] testing: deploy to s3
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-    bucket: kdb-legacy-api
+    bucket: kdb-legacy-ui
     key: latest.zip
     bundle_type: zip
-<<<<<<< HEAD
-    application: 'kdb-legacy-ui'
+
+    application: kdb-legacy-ui
     deployment_group: kdbDeploymentGroupe
-    region: us-west-1b
+    # region: us-west-1b
     on: *2
-=======
-# deploy:
-#   - provider: s3
-#     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key: $AWS_SECRET_KEY
-#     skip_cleanup: true # prevents resetting and deleting all changes
-#         on: &2
-#       repo: KevinDavidBrian/codesling.io-api
-#     bucket: 'kdb-legacy-ui'
-#     # region: us-west-1
-#   - provider: codedeploy
-#     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key: $AWS_SECRET_KEY
-#     bucket: kdb-legacy-api
-#     key: latest.zip
-#     bundle_type: zip
-#     application: 'kdb-legacy-ui'
-#     deployment_group: kdbDeploymentGroupe
-#     region: us-west-1b
-#     on: *2
->>>>>>> [travis] - recraete error on travis file
-=======
->>>>>>> [travis] - recraete error travais
-=======
-    application: kdb-legacy-api
-    deployment_group: kdbDeploymentGroupe
-    region: us-west-1b
-    on: *2
->>>>>>> [travis] testing: deploy to s3
-=======
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  skip_cleanup: true # prevents resetting and deleting all changes
-  on: &2
-    repo: KevinDavidBrian/codesling.io-ui
-  bucket: kdb-legacy-ui
-  provider: codedeploy
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: kdb-legacy-api
-  key: latest.zip
-  bundle_type: zip
-  application: kdb-legacy-api
-  deployment_group: kdbDeploymentGroupe
-  region: us-west-1b
-  on: *2
->>>>>>> [travis] edit to yml file
