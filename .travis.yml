@@ -22,9 +22,9 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     skip_cleanup: true # prevents resetting and deleting all changes
-        on: &2
+    on: &2
       repo: KevinDavidBrian/codesling.io-ui
-    bucket: 'kdb-legacy-ui'
+    bucket: kdb-legacy-ui
     # region: us-west-1
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
@@ -32,7 +32,6 @@ deploy:
     bucket: kdb-legacy-ui
     key: latest.zip
     bundle_type: zip
-
     application: kdb-legacy-ui
     deployment_group: kdbDeploymentGroupe
     # region: us-west-1b
