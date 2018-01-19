@@ -11,7 +11,7 @@ install:
   - yarn setup:server
   - yarn setup:client
 script:
-  - yarn build # develop with webpack
+  - yarn build & # develop with webpack
   - sleep 10
   - yarn start:server # start the static webserver
   - zip -r latest *
