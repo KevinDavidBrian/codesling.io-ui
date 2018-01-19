@@ -25,6 +25,7 @@ script:
 =======
 >>>>>>> [travis] testing: deploy to s3
 deploy:
+<<<<<<< HEAD
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
@@ -79,3 +80,22 @@ deploy:
     region: us-west-1b
     on: *2
 >>>>>>> [travis] testing: deploy to s3
+=======
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  skip_cleanup: true # prevents resetting and deleting all changes
+  on: &2
+    repo: KevinDavidBrian/codesling.io-api
+  bucket: kdb-legacy-api
+  provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: kdb-legacy-api
+  key: latest.zip
+  bundle_type: zip
+  application: kdb-legacy-api
+  deployment_group: kdbDeploymentGroupe
+  region: us-west-1b
+  on: *2
+>>>>>>> [travis] edit to yml file
